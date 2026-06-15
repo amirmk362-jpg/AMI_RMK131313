@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMI_RMK13</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-inner">
+        <span class="logo-text">AMI_RMK13</span>
+        <button class="header-cart-btn" onclick="toggleCart()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="hc-badge" id="hc-badge"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 🔴 پوشه images رو کنار فایل‌های html بگذارید -->
+    <div class="banner-slider">
+      <div class="b-slide active">
+        <img
+          id="banner1"
+          src="بنر1.jpg"
+          alt="بنر ۱"
+          onerror="
+            this.onerror = null;
+            this.src = svgImg(
+              1200,
+              500,
+              'e74c3c',
+              'ffffff',
+              'بنر شماره ۱',
+              'AMI_RMK13',
+            );
+          "
+        />
+      </div>
+      <div class="b-slide">
+        <img
+          id="banner2"
+          src="بنر2.jpg"
+          alt="بنر ۲"
+          onerror="
+            this.onerror = null;
+            this.src = svgImg(
+              1200,
+              500,
+              '1a1a2e',
+              'ffffff',
+              'بنر شماره ۲',
+              'AMI_RMK13',
+            );
+          "
+        />
+      </div>
+      <div class="b-dots">
+        <span class="b-dot active" onclick="goBanner(0)"></span>
+        <span class="b-dot" onclick="goBanner(1)"></span>
+      </div>
+    </div>
+
+    <div class="cat-section">
+      <div class="cat-list">
+        <div class="cat-item" onclick="location.href = 'tshirt.html'">
+          <div class="cat-circle">
+            <img
+              id="cat-tshirt"
+              src="تیشرت.jpg"
+              alt="تی‌شرت"
+              onerror="
+                this.onerror = null;
+                this.src = svgImg(150, 150, '3498db', 'ffffff', 'تی‌شرت');
+              "
+            />
+          </div>
+          <span class="cat-name">تی‌شرت</span>
+        </div>
+        <div class="cat-item" onclick="location.href = 'shirt.html'">
+          <div class="cat-circle">
+            <img
+              id="cat-shirt"
+              src="پیراهن.jpg"
+              alt="پیراهن"
+              onerror="
+                this.onerror = null;
+                this.src = svgImg(150, 150, '27ae60', 'ffffff', 'پیراهن');
+              "
+            />
+          </div>
+          <span class="cat-name">پیراهن</span>
+        </div>
+        <div class="cat-item" onclick="location.href = 'pants.html'">
+          <div class="cat-circle">
+            <img
+              id="cat-pants"
+              src="شلوار.jpg"
+              alt="شلوار"
+              onerror="
+                this.onerror = null;
+                this.src = svgImg(150, 150, '1a1a2e', 'ffffff', 'شلوار');
+              "
+            />
+          </div>
+          <span class="cat-name">شلوار</span>
+        </div>
+        <div class="cat-item" onclick="location.href = 'underwear.html'">
+          <div class="cat-circle">
+            <img
+              id="cat-underwear"
+              src="لباس زیر.jpg"
+              alt="لباس زیر"
+              onerror="
+                this.onerror = null;
+                this.src = svgImg(150, 150, '95a5a6', 'ffffff', 'لباس زیر');
+              "
+            />
+          </div>
+          <span class="cat-name">لباس زیر</span>
+        </div>
+        <div class="cat-item" onclick="location.href = 'accessory.html'">
+          <div class="cat-circle">
+            <img
+              id="cat-accessory"
+              src="اکسسوری.jpg"
+              alt="اکسسوری"
+              onerror="
+                this.onerror = null;
+                this.src = svgImg(150, 150, 'd4af37', '3a3a3a', 'اکسسوری');
+              "
+            />
+          </div>
+          <span class="cat-name">اکسسوری</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-wrap">
+      <span class="sec-head">🔥 محصولات پرتخفیف</span>
+      <div class="inner-banner">
+        <img
+          id="disc-banner"
+          src="بنر3.jpg"
+          alt="بنر تخفیف"
+          onerror="
+            this.onerror = null;
+            this.src = svgImg(
+              1200,
+              290,
+              'c0392b',
+              'ffffff',
+              'محصولات پرتخفیف',
+              'تا ۳۱٪ تخفیف',
+            );
+          "
+        />
+      </div>
+      <div class="h-scroll" id="discount-scroll">
+        <div class="h-inner" id="discount-list"></div>
+      </div>
+    </div>
+
+    <div class="about-box" id="about-section">
+      <h2>📍 درباره ما</h2>
+      <!-- 🔴🔴🔴 متن دلخواه خودتون رو به‌جای این پاراگراف بنویسید 🔴🔴🔴 -->
+      <p class="about-placeholder">با ما خرید اسان را تجربه کنید</p>
+      <div class="contact-box" id="contact-section">
+        <h3>📞 تماس با ما</h3>
+        <!-- 🔴 اطلاعات تماس واقعی خودتون رو اینجا بنویسید -->
+        <p>
+          تلفن:09921515547<br />ایمیل:amirmk362@gmail.com<br />آدرس: تهران،
+          <br />ساعات کاری: ۹:۰۰ تا ۱۸:۰۰
+        </p>
+      </div>
+      <h3>ادرس ما در instagram</h3>
+      <a
+        href="https://www.instagram.com/ami_rmk13?igsh=emZnbnZmOTB2OTJl"
+        target="_blank"
+        class="insta-btn"
+        >📷</a
+      >
+    </div>
+
+    <div id="bnav"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cs-header">
+        <span>🛒 سبد خرید</span><button onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cs-items" id="cs-items"></div>
+      <div class="cs-footer">
+        <span>جمع کل:</span><strong id="cs-total">۰ تومان</strong>
+      </div>
+      <button class="checkout-btn">✅ ثبت سفارش</button>
+    </div>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <script src="products-data.js"></script>
+    <script src="shared.js"></script>
+    <script>
+      /* اسلایدر بنر */
+      var bi = 0,
+        bSlides = document.querySelectorAll(".b-slide"),
+        bDots = document.querySelectorAll(".b-dot");
+      function goBanner(n) {
+        bi = n;
+        bSlides.forEach(function (s, i) {
+          s.classList.toggle("active", i === n);
+        });
+        bDots.forEach(function (d, i) {
+          d.classList.toggle("active", i === n);
+        });
+        clearInterval(bT);
+        bT = setInterval(function () {
+          goBanner((bi + 1) % bSlides.length);
+        }, 4500);
+      }
+      var bT = setInterval(function () {
+        goBanner((bi + 1) % bSlides.length);
+      }, 4500);
+
+      /* محصولات پرتخفیف */
+      var discountIds = Object.keys(PRODUCTS_DB)
+        .sort(function (a, b) {
+          return PRODUCTS_DB[b].disc - PRODUCTS_DB[a].disc;
+        })
+        .slice(0, 10);
+      document.getElementById("discount-list").innerHTML = discountIds
+        .map(function (id) {
+          return renderProductCard(PRODUCTS_DB[id], id, "p-card");
+        })
+        .join("");
+      enableDragScroll(document.getElementById("discount-scroll"));
+      observeCards();
+    </script>
+  </body>
+</html>
