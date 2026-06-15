@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMI_RMK13 - لباس زیر</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-inner">
+        <span class="logo-text">🧵 لباس زیر</span>
+        <button class="header-cart-btn" onclick="toggleCart()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+          <span class="hc-badge" id="hc-badge"></span>
+        </button>
+      </div>
+    </header>
+    <div class="cat-search-bar">
+      <input
+        type="text"
+        class="cat-search-input"
+        placeholder="🔍 جستجو در لباس زیر..."
+        oninput="doSearch(this.value)"
+      />
+    </div>
+    <div class="filter-row">
+      <span class="f-btn active" onclick="setF(this, 'همه')">همه</span>
+      <span class="f-btn" onclick="setF(this, 'ست')">ست</span>
+      <span class="f-btn" onclick="setF(this, 'رکابی')">رکابی</span>
+      <span class="f-btn" onclick="setF(this, 'اسلیم')">اسلیم</span>
+      <span class="f-btn" onclick="setF(this, 'پنبه‌ای')">پنبه‌ای</span>
+      <span class="f-btn" onclick="setF(this, 'ورزشی')">ورزشی</span>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-grid-inner" id="grid"></div>
+      <div class="no-result" id="no-res">محصولی یافت نشد 😕</div>
+    </div>
+    <div id="bnav"></div>
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cs-header">
+        <span>🛒 سبد خرید</span><button onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cs-items" id="cs-items"></div>
+      <div class="cs-footer">
+        <span>جمع کل:</span><strong id="cs-total">۰ تومان</strong>
+      </div>
+      <button class="checkout-btn">✅ ثبت سفارش</button>
+    </div>
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <script src="products-data.js"></script>
+    <script src="shared.js"></script>
+    <script>
+      setupCategoryPage("underwear");
+    </script>
+  </body>
+</html>
